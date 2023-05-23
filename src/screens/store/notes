@@ -1,0 +1,17 @@
+
+1) Bu paketler eklenecek
+react-redux
+redux
+
+2) reducer yazılacak
+
+3) App.js Provider ile wrap edilecek
+
+
+//useDispatch, useSelector 
+
+//useSelector
+Bu hook ile global state özündeki VALUE erişiyorum!!
+
+
+//useDispatch ile REDUCERlara erişiyorum ve objeyi store a ( reducer a ) gönderiyorum
