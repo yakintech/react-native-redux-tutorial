@@ -1,18 +1,22 @@
-import { View, Text } from 'react-native'
+import { View, Text, Pressable } from 'react-native'
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../../App';
 
 const ToDoList = () => {
 
 
+    let dispatch = useDispatch();
     let data = useSelector<RootState, any>(state => state);
 
+    const remove = (id:any) => {
+        dispatch({type:'REMOVE_TODO', payload:id})
+    }
 
     return (
         <View>
             {
-                data && data.map((item:any) => <Text>{item.title}</Text>)
+                data && data.map((item:any) => <Pressable key={item.id} onPress={() => remove(item.id)}><Text>{item.title}</Text></Pressable> )
             }
         </View>
     )
