@@ -1,6 +1,7 @@
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
+import { toDoActions } from '../store/actions/todoActions';
 
 const AddTodo = () => {
 
@@ -14,12 +15,13 @@ const AddTodo = () => {
             title: title
         }
 
-        dispatch({ type: 'ADD_TODO', payload: newTodoItem })
+        dispatch(toDoActions.add(newTodoItem))
     }
 
     const emptyTodos = () => {
-        dispatch({type:'EMPTY'})
+        dispatch(toDoActions.empty())
     }
+
 
     return (
         <View>
