@@ -7,7 +7,7 @@ const ToDoList = () => {
 
 
     let dispatch = useDispatch();
-    let data = useSelector<RootState, any>(state => state);
+    let {todoState} = useSelector<RootState, any>(state => state);
 
     const remove = (id:any) => {
         dispatch({type:'REMOVE_TODO', payload:id})
@@ -16,7 +16,7 @@ const ToDoList = () => {
     return (
         <View>
             {
-                data && data.map((item:any) => <Pressable key={item.id} onPress={() => remove(item.id)}><Text>{item.title}</Text></Pressable> )
+                todoState && todoState.map((item:any) => <Pressable key={item.id} onPress={() => remove(item.id)}><Text>{item.title}</Text></Pressable> )
             }
         </View>
     )

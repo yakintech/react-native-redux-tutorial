@@ -8,10 +8,11 @@ import CounterScreen from './src/screens/CounterScreen'
 import { ToDoReducer } from './src/screens/store/ToDoReducer'
 import AddTodo from './src/screens/todo/AddTodo'
 import ToDoList from './src/screens/todo/ToDoList'
+import { rootReducer } from './src/screens/store/rootReducer'
 
 
 // const store = createStore(CounterReducer);
-const store = createStore(ToDoReducer);
+const store = createStore(rootReducer);
 
 export type RootState = ReturnType<typeof store.getState>
 
